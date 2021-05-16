@@ -36,7 +36,7 @@ public class CadastroContas {
 		Conta c = contas.procurar(n);
 		if (c != null) {
 			r = c.debitar(v);
-			r = 1;
+			// r = 1;
 		}
 		return r;
 	}

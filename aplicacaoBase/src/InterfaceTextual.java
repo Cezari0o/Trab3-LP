@@ -300,7 +300,7 @@ public class InterfaceTextual {
                 System.out.println(">> debitar executado com sucesso:");
             } else {
                 System.out
-                        .println("!!!debitar em conta falhou, conta nao existe");
+                        .println("!!!debitar em conta falhou, conta nao existe ou nao possui saldo suficiente");
             }
 
             break;
@@ -322,13 +322,14 @@ public class InterfaceTextual {
 
             break;
             
-        /*    
+// -----------------------------------------------------------------------------------------
+// Questao 4
         case OP_RENDER_JUROS_CONTAS:
-            System.out.println("Favor entre numero da conta e  tecle Enter:");
+            System.out.println("Favor entre numero da conta e tecle Enter:");
             numero = sc.nextLine();
             System.out.println("Favor entre o valor da taxa de juros e tecle Enter:");
             valor = sc.nextDouble();
-            cod_retorno = fachada.renderJuros(numero,valor);
+            cod_retorno = fachada.renderJuros(numero, valor);
             if (cod_retorno == 1) {
                 System.out.println(">> render juros executado com sucesso:");
             } else {
@@ -349,7 +350,7 @@ public class InterfaceTextual {
             }
 
             break;
-        */
+// -----------------------------------------------------------------------------------------
 
         
         case OP_EXIBIR_CONTAS_CLIENTE:
