@@ -1,3 +1,13 @@
+/**
+ * Universidade de Brasilia
+ * Instituto de Ciencias Exatas
+ * Departamento de Ciencia da Computacao
+ * Disciplina: Linguagens de Programacao    Turma: A
+ * 
+ * Estudante: Gabriel Cesario Silva Martins
+ * Matricula: 180100912
+ */
+
 
 import java.util.Scanner;
 import java.util.Locale;
@@ -322,12 +332,11 @@ public class InterfaceTextual {
 
             break;
             
-// -----------------------------------------------------------------------------------------
-// Questao 4
+
         case OP_RENDER_JUROS_CONTAS:
             System.out.println("Favor entre numero da conta e tecle Enter:");
             numero = sc.nextLine();
-            System.out.println("Favor entre o valor da taxa de juros e tecle Enter:");
+            System.out.println("Favor entre o valor da porcentagem da taxa de juros e tecle Enter:");
             valor = sc.nextDouble();
             cod_retorno = fachada.renderJuros(numero, valor);
             if (cod_retorno == 1) {
@@ -350,8 +359,6 @@ public class InterfaceTextual {
             }
 
             break;
-// -----------------------------------------------------------------------------------------
-
         
         case OP_EXIBIR_CONTAS_CLIENTE:
             System.out.println("Favor entre CPF do cliente e  tecle Enter:");
@@ -419,6 +426,11 @@ public class InterfaceTextual {
         default:
             System.out.println("Opcao invalida! Favor entrar uma opcao entre 1 e 15");
 
+        }
+        
+        if(opcao != OP_SAIR) {
+            System.out.println("Pressione enter para continuar:");
+            sc.nextLine();
         }
 
     }

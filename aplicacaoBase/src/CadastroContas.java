@@ -120,7 +120,7 @@ public class CadastroContas {
 
 		contaCliente = contas.procurar(numeroConta);
 
-		if(contaCliente != null) {
+		if(contaCliente != null && valorJuros > 0.0) {
 
 			if(contaCliente instanceof Poupanca) {
 				( (Poupanca) contaCliente).renderJuros(valorJuros);

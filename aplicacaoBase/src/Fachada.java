@@ -40,9 +40,12 @@ public class Fachada {
 		// esta eh uma regra de negocio
 		Conta conta = null;
 		ListaContas lista_contas =  listaContasCliente(cpf);
-		while (lista_contas.hasNext()) {
-			conta = lista_contas.next();
-			contas.descadastrar(conta.getNumero());
+
+		if(lista_contas != null) {
+			while (lista_contas.hasNext()) {
+				conta = lista_contas.next();
+				contas.descadastrar(conta.getNumero());
+			}
 		}
 		// agora sim, descadastra o cliente
 		clientes.descadastrar(cpf);
@@ -65,7 +68,8 @@ public class Fachada {
 		// informa a mudanca ao cadastro: isto eh importante para fins de consistencia do estado da conta
 		// numa aplicacao que eventualmente tivesse persistencia em banco de dados ou se 
 		//fosse  uma aplicacao distribuida.
-		r = contas.atualizar(ct);
+		if(ct != null)
+			r = contas.atualizar(ct);
 		
 		//retorna sucesso ou codigo de erro
 		return r;
