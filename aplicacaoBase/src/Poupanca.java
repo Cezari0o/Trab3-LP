@@ -1,6 +1,6 @@
 public class Poupanca extends Conta {
 
-    public void renderJuros(double juros) {
+    public void renderJuros(double juros) { // Rendimento de juros assim como apresentado em aula
         super.creditar(juros * this.getSaldo());
     }
 

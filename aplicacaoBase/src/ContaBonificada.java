@@ -11,7 +11,7 @@ public class ContaBonificada extends Conta {
 
     public ContaBonificada(String numero, Cliente cliente) {
         super(numero, cliente);
-        this.bonificacao = 0.01;
+        this.bonificacao = 0.01; // Assim como mostrado em aula, a bonificacao padrao eh de 1 por cento.
         this.bonus = 0;
     }
 
@@ -29,6 +29,7 @@ public class ContaBonificada extends Conta {
 
     @Override
     public void creditar(double credito) {
+        // Sobrescrevendo o metodo para atender o comportamento da conta
         super.creditar(credito);
         bonus += credito * bonificacao;
     }

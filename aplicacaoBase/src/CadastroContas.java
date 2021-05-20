@@ -100,7 +100,7 @@ public class CadastroContas {
 
 		contaCliente = contas.procurar(numeroConta);
 
-		if(contaCliente != null) {
+		if(contaCliente != null) { // So pode render bonus sobre contas que existem
 
 			if(contaCliente instanceof ContaBonificada) {
 				( (ContaBonificada) contaCliente).renderBonus();
@@ -120,6 +120,8 @@ public class CadastroContas {
 
 		contaCliente = contas.procurar(numeroConta);
 
+		// Somente pode render juros sobre contas que existem
+		// Aceita so juros positivos
 		if(contaCliente != null && valorJuros > 0.0) {
 
 			if(contaCliente instanceof Poupanca) {

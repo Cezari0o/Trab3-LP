@@ -218,10 +218,10 @@ public class InterfaceTextual {
     
                     }
                 }
-                else
+                else // Atribuindo null para manter consistencia na execucao
                     conta = null;
 
-                if(conta != null)
+                if(conta != null) // Cadastra somente contas que existem
                     cod_retorno = fachada.cadastrar(conta);
                 else
                     cod_retorno = -1;
