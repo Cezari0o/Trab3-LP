@@ -127,43 +127,13 @@ public class Fachada {
 	}
 
 	public int renderBonus(String numeroConta) {
-		Conta contaCliente = null; int codRetorno = -1;
 
-		contaCliente = contas.procurar(numeroConta);
-
-		if(contaCliente != null) {
-
-			if(contaCliente instanceof ContaBonificada) {
-				( (ContaBonificada) contaCliente).renderBonus();
-				codRetorno = 1;
-			}
-
-			else {
-				InterfaceTextual.mostra_mensagem("Erro: a conta encontrada nao eh uma conta Bonificada!");
-			}
-		}
-
-		return codRetorno;
+		return contas.renderBonus(numeroConta);
 	}
 
 	public int renderJuros(String numeroConta, double valorJuros) {
-		Conta contaCliente = null; int codRetorno = -1;
-
-		contaCliente = contas.procurar(numeroConta);
-
-		if(contaCliente != null) {
-
-			if(contaCliente instanceof Poupanca) {
-				( (Poupanca) contaCliente).renderJuros(valorJuros);
-				codRetorno = 1;
-			}
-
-			else {
-				InterfaceTextual.mostra_mensagem("Erro: a conta encontrada nao eh uma conta Poupanca!");
-			}
-		}
-
-		return codRetorno;
+		
+		return contas.renderJuros(numeroConta, valorJuros);
 	}
 
 }
